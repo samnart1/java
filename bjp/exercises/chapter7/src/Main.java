@@ -1,38 +1,114 @@
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23};
+        System.out.println(primes);
+        System.out.println(Arrays.toString(primes));
+
+
+        int[] data = buildOddArray(5);
+//
+        int[] newData = Arrays.copyOf(data, 2 * data.length);
+//        System.out.println(newData.length);
+
+//        fillWithOdds(data);
+//        incrementData(data);
+//
+//        for (int i : data){
+//            System.out.println(i);
+//        }
+    }
+
+    public static int[] buildOddArray(int size) {
+        int[] data = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            data[i] = 2 * i + 1;
+        }
+        return data;
+    }
+
+    public static void fillWithOdds(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            data[i] = 2 * i + 1;
+        }
+    }
+
+    public static void incrementData(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            data[i]++;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // take input and store it in an array.
         // find the average
         // find days that are lower than the average
         // and days higher than the average
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How many days' temperatures? ");
-        int numDays = scanner.nextInt();
-        int[] days = new int[numDays];
-        int sum = 0;
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("How many days' temperatures? ");
+//        int numDays = scanner.nextInt();
+//        int[] days = new int[numDays];
+//        int sum = 0;
+//
+//        for (int i = 0; i < numDays; i++) {
+//            int next = scanner.nextInt();
+//            days[i] = next;
+//            sum += next;
+//        }
+//
+//        double average = (double) sum / numDays;
+//
+//        for (int i = 0; i < days.length; i++) {
+//            if (days[i] > average) {
+//                System.out.println("Day " + (i + 1) + "'s high temp is higher than the average.");
+//            } else {
+//                System.out.println("Day " + (i + 1) + "'s high temp is lower than the average.");
+//            }
+//        }
+//
+//        scanner.close();
 
-        for (int i = 0; i < numDays; i++) {
-            int next = scanner.nextInt();
-            days[i] = next;
-            sum += next;
-        }
-
-        double average = (double) sum / numDays;
-
-        for (int i = 0; i < days.length; i++) {
-            if (days[i] > average) {
-                System.out.println("Day " + (i + 1) + "'s high temp is higher than the average.");
-            } else {
-                System.out.println("Day " + (i + 1) + "'s high temp is lower than the average.");
-            }
-        }
-
-        scanner.close();
-    }
 
 
 
@@ -108,4 +184,3 @@ public class Main {
 //
 //
 //    }
-}
