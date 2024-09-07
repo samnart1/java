@@ -52,4 +52,19 @@ public class Main {
 //        p2.translate(2938, 2983);
 
     }
+
+//    public static void myMethod(Object o) {}
+//    public static Object tryingHaha(Object o) {
+//        return o;
+//    }
+
+    public boolean equals(Object o) {
+        if (o instanceof Point) {
+            Point other = (Point) o;
+            return x == other.x && y == other.y;
+        } else {
+            return false;
+        }
+        return false;
+    }
 }
