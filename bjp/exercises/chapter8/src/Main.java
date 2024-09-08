@@ -1,3 +1,7 @@
+import interfaces.Circle;
+import interfaces.Rectangle;
+import interfaces.Shape;
+import interfaces.Triangle;
 import poly.A;
 import poly.B;
 import poly.C;
@@ -8,14 +12,27 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        A[] elements = {new A(), new B(), new C(), new D()};
+        Shape[] shapes = new Shape[3];
 
-        for (int i = 0; i < elements.length; i++) {
-            System.out.println(elements[i]);
-            elements[i].method1();
-            elements[i].method2();
-            System.out.println();
+        shapes[0] = new Rectangle(18, 18);
+        shapes[1] = new Triangle(30, 30, 30);
+        shapes[2] = new Circle(12);
+
+        for (int i = 0; i < shapes.length; i++) {
+            System.out.println("Area = " + shapes[i].getArea() + ", perimeter = " + shapes[i].getPerimeter());
         }
+
+//        var rectangle = new Rectangle(5.0, 4.0);
+//        System.out.println(rectangle.getArea());
+
+//        A[] elements = {new A(), new B(), new C(), new D()};
+//
+//        for (int i = 0; i < elements.length; i++) {
+//            System.out.println(elements[i]);
+//            elements[i].method1();
+//            elements[i].method2();
+//            System.out.println();
+//        }
 
 
 
