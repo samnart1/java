@@ -1,25 +1,78 @@
+import poly.A;
+import poly.B;
+import poly.C;
+import poly.D;
+
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.print("Employee: ");
+        A[] elements = {new A(), new B(), new C(), new D()};
 
-        var edna = new Employee();
-        System.out.print(edna.getHours());
-        System.out.printf(", %.2f, ", edna.getSalary());
-        System.out.printf("%d, ", edna.getVacationDays());
-        System.out.printf("%s.", edna.getVacationForms());
+        for (int i = 0; i < elements.length; i++) {
+            System.out.println(elements[i]);
+            elements[i].method1();
+            elements[i].method2();
+            System.out.println();
+        }
 
-        System.out.println();
 
-        var stan = new Secretary();
-        System.out.print("Secretary: ");
-        System.out.print(stan.getHours());
-        System.out.printf(", %.2f, ", stan.getSalary());
-        System.out.printf("%d, ", stan.getVacationDays());
-        System.out.printf("%s, ", stan.getVacationForms());
-        stan.takeDictation("I can read haha.");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        Employee[] employees = {new Employee(), new Secretary(), new Lawyer(), new LegalSecretary()};
+//
+//        for (Employee e : employees) {
+//            System.out.print(e.getHours() + ", ");
+//            System.out.printf("$%.2f, ", e.getSalary());
+//            System.out.print(e.getVacationDays() + ", ");
+//            System.out.print(e.getVacationForms() + ", ");
+//            System.out.println(e);
+//        }
+
+//        Employee ed = new Secretary();
+//        ((Secretary) ed).takeDictation("Hello!");
+
+
+
+//        System.out.print("Employee: ");
+//
+//        var edna = new Employee();
+//        System.out.print(edna.getHours());
+//        System.out.printf(", %.2f, ", edna.getSalary());
+//        System.out.printf("%d, ", edna.getVacationDays());
+//        System.out.printf("%s.", edna.getVacationForms());
+//
+//        System.out.println();
+//
+//        var stan = new Secretary();
+//        System.out.print("Secretary: ");
+//        System.out.print(stan.getHours());
+//        System.out.printf(", %.2f, ", stan.getSalary());
+//        System.out.printf("%d, ", stan.getVacationDays());
+//        System.out.printf("%s, ", stan.getVacationForms());
+//        stan.takeDictation("I can read haha.");
 
 
 
@@ -58,13 +111,13 @@ public class Main {
 //        return o;
 //    }
 
-    public boolean equals(Object o) {
-        if (o instanceof Point) {
-            Point other = (Point) o;
-            return x == other.x && y == other.y;
-        } else {
-            return false;
-        }
-        return false;
-    }
+//    public boolean equals(Object o) {
+//        if (o instanceof Point) {
+//            Point other = (Point) o;
+//            return x == other.x && y == other.y;
+//        } else {
+//            return false;
+//        }
+//        return false;
+//    }
 }
