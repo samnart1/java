@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -14,17 +15,74 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
+        ArrayList<String> dayNames = new ArrayList<>(List.of("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
+        
+
+
         // ARRAYLIST SEARCHING METHODS
-        ArrayList<String> list = new ArrayList<>();
-        list.add("to");
-        list.add("be");
-        list.add("or");
-        list.add("not");
-        list.add("to");
-        list.add("be");
-        System.out.println(list);
-        replace(list, "be", "beep");
-        System.out.println("final list = " + list);
+
+//        ArrayList<String> words = new ArrayList<>();
+//        words.add("four");
+//        words.add("score");
+//        words.add("and");
+//        words.add("seven");
+//        words.add("years");
+//        words.add("ago");
+//
+//        System.out.println("words = " + words);
+//
+//        for (int i = 0; i < words.size(); i += 2) {
+//            words.add(i, "~");
+//        }
+//
+//        System.out.println("after loop words ~ : " + words);
+//
+//        for (int i = 0; i < words.size(); i++) {
+//            words.remove(i);
+//        }
+//
+//        System.out.println("words after remove loop: " + words);
+
+
+//        ArrayList<String> stopWords = new ArrayList<>();
+//        stopWords.add("a");
+//        stopWords.add("be");
+//        stopWords.add("by");
+//        stopWords.add("how");
+//        stopWords.add("in");
+//        stopWords.add("is");
+//        stopWords.add("it");
+//        stopWords.add("of");
+//        stopWords.add("on");
+//        stopWords.add("or");
+//        stopWords.add("that");
+//        stopWords.add("the");
+//        stopWords.add("this");
+//        stopWords.add("to");
+//        stopWords.add("why");
+//
+//        Scanner scanner = new Scanner(new File("speech.txt"));
+//        while (scanner.hasNext()) {
+//            String next = scanner.next();
+//            if (!stopWords.contains(next.toLowerCase())) {
+//                System.out.print(next + " ");
+//            }
+//        }
+
+
+
+
+
+//        ArrayList<String> list = new ArrayList<>();
+//        list.add("to");
+//        list.add("be");
+//        list.add("or");
+//        list.add("not");
+//        list.add("to");
+//        list.add("be");
+//        System.out.println(list);
+//        replace(list, "be", "beep");
+//        System.out.println("final list = " + list);
 
 //        Scanner scanner = new Scanner(new File("names.txt"));
 //        ArrayList<String> list = new ArrayList<>();
