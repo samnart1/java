@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         ArrayList<String> dayNames = new ArrayList<>(List.of("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
-        
+
 
 
         // ARRAYLIST SEARCHING METHODS
