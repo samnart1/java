@@ -1,8 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Main {
 
@@ -19,18 +18,55 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(13);
-        list.add(47);
-        list.add(15);
-        list.add(9);
-//        list.add()
-        int sum = 0;
-        for (int x : list) {
-            sum += x;
+        int n = 420;
+
+        ArrayList<Integer> list = new ArrayList<>(List.of(n, n));
+
+        if (list.get(0).equals(list.get(1))) {
+            System.out.println("Equal");
+        } else {
+            System.out.println("Unequal");
         }
-        System.out.println("List = " + list);
-        System.out.println("sum of list : " + sum);
+
+//        ArrayList<String> words = new ArrayList<>();
+//        words.add("four");
+//        words.add("score");
+//        words.add("and");
+//        words.add("seven");
+//        words.add("years");
+//        words.add("ago");
+//
+//        System.out.println("Words in the arraylist before sort: " + words);
+//
+//        Collections.sort(words);
+////        Collections.
+//
+//        System.out.println("Words after sort: " + words);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(13);
+//        list.add(47);
+//        list.add(15);
+//        list.add(9);
+////        list.add()
+//        int sum = 0;
+//        for (int x : list) {
+//            sum += x;
+//        }
+//        System.out.println("List = " + list);
+//        System.out.println("sum of list : " + sum);
 
 //        Integer y = new Integer(38);
 //        int value = y.intValue();
