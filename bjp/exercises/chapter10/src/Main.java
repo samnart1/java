@@ -15,7 +15,16 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        ArrayList<String> dayNames = new ArrayList<>(List.of("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
+        ArrayList<String> list = new ArrayList<>(List.of("Samuel", "Armin", "Eren", "Erwin", "Levi"));
+
+        int sum = 0;
+        for (String s : list) {
+            sum += s.length();
+        }
+
+        System.out.println("Total of lengths = " + sum);
+
+//        ArrayList<String> dayNames = new ArrayList<>(List.of("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
 
 
 
