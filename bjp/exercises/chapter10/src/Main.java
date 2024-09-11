@@ -6,23 +6,43 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void replace(ArrayList<String> list, String target, String replacement) {
-        int index = list.indexOf(target);
-        if (index >= 0) {
-            list.set(index, replacement);
-        }
-    }
+//    Integer sam = new Integer(38);
+//
+//    int number = sam.intValue();
+
+//    public static void replace(ArrayList<String> list, String target, String replacement) {
+//        int index = list.indexOf(target);
+//        if (index >= 0) {
+//            list.set(index, replacement);
+//        }
+//    }
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        ArrayList<String> list = new ArrayList<>(List.of("Samuel", "Armin", "Eren", "Erwin", "Levi"));
-
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(13);
+        list.add(47);
+        list.add(15);
+        list.add(9);
+//        list.add()
         int sum = 0;
-        for (String s : list) {
-            sum += s.length();
+        for (int x : list) {
+            sum += x;
         }
+        System.out.println("List = " + list);
+        System.out.println("sum of list : " + sum);
 
-        System.out.println("Total of lengths = " + sum);
+//        Integer y = new Integer(38);
+//        int value = y.intValue();
+
+//        ArrayList<String> list = new ArrayList<>(List.of("Samuel", "Armin", "Eren", "Erwin", "Levi"));
+//
+//        int sum = 0;
+//        for (String s : list) {
+//            sum += s.length();
+//        }
+//
+//        System.out.println("Total of lengths = " + sum);
 
 //        ArrayList<String> dayNames = new ArrayList<>(List.of("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
 
