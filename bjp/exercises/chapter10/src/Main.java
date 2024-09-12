@@ -18,15 +18,40 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        int n = 420;
+        // Natural Ordering and compareTo
 
-        ArrayList<Integer> list = new ArrayList<>(List.of(n, n));
+        ArrayList<CalendarDate> dates = new ArrayList<>();
+        dates.add(new CalendarDate(2, 22));
+        dates.add(new CalendarDate(10, 30));
+        dates.add(new CalendarDate(4, 13));
+        dates.add(new CalendarDate(3, 16));
+        dates.add(new CalendarDate(4, 28));
 
-        if (list.get(0).equals(list.get(1))) {
-            System.out.println("Equal");
-        } else {
-            System.out.println("Unequal");
-        }
+        System.out.println("Birthdays = " + dates);
+        Collections.sort(dates);
+        System.out.println("Birthdays after sort = " + dates);
+
+//        Integer x = 7;
+//        Integer y = 42;
+//        Integer z = 7;
+
+//        String x = "hello";
+//        String y = "world";
+//        String z = "hello";
+//
+//        System.out.println(x.compareTo(y));
+//        System.out.println(x.compareTo(z));
+//        System.out.println(y.compareTo(z));
+
+//        int n = 420;
+//
+//        ArrayList<Integer> list = new ArrayList<>(List.of(n, n));
+//
+//        if (list.get(0).equals(list.get(1))) {
+//            System.out.println("Equal");
+//        } else {
+//            System.out.println("Unequal");
+//        }
 
 //        ArrayList<String> words = new ArrayList<>();
 //        words.add("four");
