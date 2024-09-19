@@ -57,7 +57,11 @@ public class Main {
         Iterator<String> i = list.iterator();
         String result = i.next();
         while (i.hasNext()) {
-            String 
+            String next = i.next();
+            if (next.length() > result.length()) {
+                result = next;
+            }
         }
+        return result;
     }
 }
