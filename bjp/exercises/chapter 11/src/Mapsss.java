@@ -1,23 +1,50 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Mapsss {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        File mobyDick = new File("mobydick.txt");
 
 
-        Map<Integer, String> ssnMap = new HashMap<>();
-        ssnMap.put(867530912, "Jenny");
-        ssnMap.put(239876305, "Stuart Reges");
-        ssnMap.put(504386382, "Marty Stepp");
-
-        Set<Integer> ssnSet = ssnMap.keySet();
-        for (int ssn : ssnSet) {
-            System.out.println("SSN: " + ssn);
+        Map<String, Integer> wordCountMap = new TreeMap<>();
+        Scanner scanner = new Scanner(mobyDick);
+        while (scanner.hasNext()) {
+            String word = scanner.next().toLowerCase();
         }
 
-        Collection<String> names = ssnMap.values();
-        for (String name : names) {
-            System.out.println("Name: " + name);
-        }
+//        Map<Integer, String> ssnMap = new TreeMap<>();
+//        ssnMap.put(867530912, "Jenny");
+//        ssnMap.put(239876305, "Stuart Reges");
+//        ssnMap.put(504386382, "Marty Stepp");
+//        System.out.println(ssnMap);
+
+
+//        Map<Integer, String> ssnMap = new HashMap<>();
+//        ssnMap.put(867530912, "Jenny");
+//        ssnMap.put(239876305, "Stuart Reges");
+//        ssnMap.put(504386382, "Marty Stepp");
+//
+//
+//        Set<Integer> ssnSet = ssnMap.keySet();
+//        for (int ssn : ssnSet) {
+//            System.out.println("SSN: " + ssn);
+//        }
+//
+//        System.out.println();
+//
+//        Collection<String> names = ssnMap.values();
+//        for (String name : names) {
+//            System.out.println("Name: " + name);
+//        }
+//
+//        System.out.println();
+//
+//        for (int ssn : ssnMap.keySet()) {
+//            String name = ssnMap.get(ssn);
+//            System.out.println(name + "'s SSN is " + ssn);
+//        }
 
 
 
