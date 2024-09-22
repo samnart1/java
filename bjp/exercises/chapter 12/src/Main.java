@@ -7,8 +7,21 @@ public class Main {
         File file = new File("file.txt");
         Scanner scanner = new Scanner(file);
 
-        writeStars(10);
-        reverse(scanner);
+        System.out.println(pow(2, -2));;
+
+//        writeStars(10);
+//        reverse(scanner);
+    }
+
+    public static int pow(int x, int y) {
+
+        if (y < 0) {
+            throw new IllegalArgumentException("Negative exponent: " + y);
+        } else if (y == 0) {
+            return 1;
+        } else {
+            return x * pow(x, y - 1);
+        }
     }
 
     public static void writeStars(int n) {
