@@ -1,13 +1,14 @@
 package com.example.demo.tacos.web;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -61,11 +62,28 @@ public class DesignTacoController {
         return "design";
     }
 
+    // private Iterable<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
+    //     return ingredients
+    //         .stream()
+    //         .filter(x -> x.getType().equals(type))
+    //         .collect(Collectors.toList());
+    // }
+
     private Iterable<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
-        return ingredients
-            .stream()
-            .filter(x -> x.getType().equals(type))
-            .collect(Collectors.toList());
+        List<Ingredient> filteredIngredients = new ArrayList<>();
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.getType().equals(type)) {
+                filteredIngredients.add(ingredient);
+            }
+        }
+        return filteredIngredients;
+    }
+
+    @PostMapping
+    public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
+        tacoOrder.addTAco(taco);
+        log.info("Processing taco: {}", taco);
+        return "redirect:/orders/current";
     }
 
     
