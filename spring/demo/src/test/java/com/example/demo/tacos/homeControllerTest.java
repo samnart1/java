@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 // import com.example.demo.tacos.HomeController;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest()
 public class homeControllerTest {
     
     @Autowired

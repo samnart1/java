@@ -2,6 +2,8 @@ package com.example.demo.tacos;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.validator.constraints.CreditCardNumber;
+
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -25,7 +27,7 @@ public class TacoOrder {
     @NotBlank(message = "Zip code is required")
     private String deliveryZip;
 
-    @NotBlank(message = "Not a valid credit card number")
+    @CreditCardNumber(message = "Not a valid credit card number")
     private String ccNumber;
 
     @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([2-9][0-9])$", message = "Must be formatted MM/YY")
@@ -36,7 +38,7 @@ public class TacoOrder {
 
     private List<Taco> tacos = new ArrayList<>();
 
-    public void addTAco(Taco taco) {
+    public void addTaco(Taco taco) {
         tacos.add(taco);
     }
 
