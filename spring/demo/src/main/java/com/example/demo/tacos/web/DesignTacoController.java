@@ -3,6 +3,9 @@ package com.example.demo.tacos.web;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,10 +41,16 @@ public class DesignTacoController {
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
 
-        Iterable<Ingredient>ingredients = ingredientRepo.findAll();
+        Iterable<Ingredient> ingredients = ingredientRepo.findAll();
+
+        List<Ingredient> ingredientList = StreamSupport
+            .stream(ingredients.spliterator(), false)
+            .collect(Collectors.toList());
+
         Type[] types = Ingredient.Type.values();
+
         for (Type type : types) {
-            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
+            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredientList, type));
         }
     }
 
