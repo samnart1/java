@@ -4,9 +4,9 @@ import java.lang.ProcessBuilder.Redirect.Type;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import com.example.demo.tacos.data.IngredientRepository;
 import org.springframework.data.relational.core.mapping.Table;
 
-import com.example.demo.tacos.data.IngredientRepository;
 
 import lombok.Data;
 

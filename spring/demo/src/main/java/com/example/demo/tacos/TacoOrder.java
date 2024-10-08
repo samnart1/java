@@ -15,7 +15,7 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
-@Table("Taco_Cloud_Order")
+@Table
 public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,7 +25,6 @@ public class TacoOrder implements Serializable {
 
     private Date placedAt;
 
-    @Column("customer_name")
     @NotBlank(message = "Delivery name is required")
     private String deliveryName;
 

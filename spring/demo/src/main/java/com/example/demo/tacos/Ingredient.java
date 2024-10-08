@@ -16,11 +16,18 @@ import lombok.NoArgsConstructor;
 public class Ingredient implements Persistable<String> {
     
     @Id
-    private final String id;
-    private final String name;
-    private final Type type;
+    private String id;
+    private String name;
+    private Type type;
+    // private transient boolean isNew = true; 
+
+    @Override
+    public boolean isNew() {
+        return this.id == null || this.id.isEmpty();
+    }
 
     public enum Type {
             WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
+
 }

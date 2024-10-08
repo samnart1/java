@@ -26,6 +26,7 @@ import com.example.demo.tacos.data.IngredientRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
