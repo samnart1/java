@@ -8,6 +8,8 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.data.annotation.Id;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -15,7 +17,8 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
-@Table
+@Entity
+@Table(name="Taco_Order")
 public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,6 +51,9 @@ public class TacoOrder implements Serializable {
 
     @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
     private String ccCVV;
+
+    @ManyToOne
+    private User user;
 
     private List<Taco> tacos = new ArrayList<>();
 

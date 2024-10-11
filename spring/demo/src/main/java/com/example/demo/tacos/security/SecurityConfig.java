@@ -41,14 +41,30 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
         return http
+
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/design", "/orders").hasRole("USER")
                 .requestMatchers("/", "/**").permitAll()
             )
+
             .formLogin(form -> form
                 .loginPage("/login")
+                .defaultSuccessUrl("/design", true)
+                .loginProcessingUrl("/authenticate")
+                .usernameParameter("user")
+                .passwordParameter("pwd")
             )
+
+            .oauth2Login(oauth2 -> oauth2
+                .loginPage("/login")
+            )
+
+            .logout(logOut -> logOut
+                .logoutSuccessUrl("/")
+            )
+            
             .build();
     }
 }
