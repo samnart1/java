@@ -1,4 +1,4 @@
-package com.example.taco_cloud;
+package com.example.practice_taco;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,15 +17,15 @@ public class OrderController {
 
     @GetMapping("/current")
     public String orderForm() {
-        return "orderForm";
+        return "order";
     }
 
     @PostMapping
-    public String processOrder(TacoOrder order, SessionStatus sessionStatus) {
-        log.info("Order submitted: {}", order);
+    public String processOrder(TacoOrder tacoOrder, SessionStatus sessionStatus) {
+
+        log.info("Order submitted {}", tacoOrder);
         sessionStatus.setComplete();
-        
+
         return "redirect:/";
     }
-    
 }

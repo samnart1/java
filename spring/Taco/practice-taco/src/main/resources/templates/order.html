@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taco Cloud</title>
+</head>
+<body>
+    <h1>Order Your Precious Tacos</h1>
+    <img th:src="@{/images/TacoCloud.png}" alt="">
+
+    <h3>Create another taco</h3>
+    <a th:href="@{/design}">Design another taco</a>
+    <ul>
+        <li th:each="taco : ${tacoOrder.tacos}"><span th:text="${taco.name}"></span></a></li>
+    </ul>
+</body>
+</html>

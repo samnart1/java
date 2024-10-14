@@ -13,9 +13,9 @@ public class TacoOrder {
     private String deliveryCity;
     private String deliveryState;
     private String deliveryZip;
-    private String ccCVV;
-    private String ccExpiration;
     private String ccNumber;
+    private String ccExpiration;
+    private String ccCVV;
     
     private List<Taco> tacos = new ArrayList<>();
 

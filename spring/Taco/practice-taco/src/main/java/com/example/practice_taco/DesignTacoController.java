@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -25,16 +26,16 @@ public class DesignTacoController {
     public void addTypeToModel(Model model) {
 
         List<Ingredient> ingredients = Arrays.asList(
-            new Ingredient("", "", Type.CHEESE),
-            new Ingredient("", "", Type.CHEESE),
-            new Ingredient("", "", Type.PROTEIN),
-            new Ingredient("", "", Type.PROTEIN),
-            new Ingredient("", "", Type.SAUCE),
-            new Ingredient("", "", Type.SAUCE),
-            new Ingredient("", "", Type.VEGGIES),
-            new Ingredient("", "", Type.VEGGIES),
-            new Ingredient("", "", Type.WRAP),
-            new Ingredient("", "", Type.WRAP)
+            new Ingredient("GHA", "Ghana", Type.CHEESE),
+            new Ingredient("NIG", "Nigeria", Type.CHEESE),
+            new Ingredient("ENG", "England", Type.PROTEIN),
+            new Ingredient("GER", "Germany", Type.PROTEIN),
+            new Ingredient("BRA", "Brazil", Type.SAUCE),
+            new Ingredient("ARG", "Argentina", Type.SAUCE),
+            new Ingredient("USA", "USA", Type.VEGGIES),
+            new Ingredient("CAN", "Canada", Type.VEGGIES),
+            new Ingredient("CHN", "China", Type.WRAP),
+            new Ingredient("IDN", "India", Type.WRAP)
 
         );
 
@@ -69,5 +70,13 @@ public class DesignTacoController {
                 .equals(type)
             )
             .collect(Collectors.toList());
+    }
+
+    @PostMapping
+    public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
+        tacoOrder.addTacos(taco);
+        log.info("Processing taco {}", taco);
+
+        return "redirect:/orders/current";
     }
 }
