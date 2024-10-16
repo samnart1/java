@@ -1,5 +1,7 @@
 package com.example.practice_taco;
 
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,14 +18,13 @@ import lombok.extern.slf4j.Slf4j;
 public class OrderController {
 
     @GetMapping("/current")
-    public String orderForm() {
+    public String order() {
         return "order";
     }
 
     @PostMapping
-    public String processOrder(TacoOrder tacoOrder, SessionStatus sessionStatus) {
-
-        log.info("Order submitted {}", tacoOrder);
+    public String processTacoOrder(TacoOrder tacoOrder, SessionStatus sessionStatus) {
+        log.info("Taco Order has been places: {}", tacoOrder);
         sessionStatus.setComplete();
 
         return "redirect:/";

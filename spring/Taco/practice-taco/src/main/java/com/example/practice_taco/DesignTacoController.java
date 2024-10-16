@@ -18,30 +18,28 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping("/design")
+@RequestMapping
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
 
     @ModelAttribute
-    public void addTypeToModel(Model model) {
-
+    public void addIngredientsToModel(Model model) {
         List<Ingredient> ingredients = Arrays.asList(
             new Ingredient("GHA", "Ghana", Type.CHEESE),
             new Ingredient("NIG", "Nigeria", Type.CHEESE),
             new Ingredient("ENG", "England", Type.PROTEIN),
             new Ingredient("GER", "Germany", Type.PROTEIN),
-            new Ingredient("BRA", "Brazil", Type.SAUCE),
-            new Ingredient("ARG", "Argentina", Type.SAUCE),
-            new Ingredient("USA", "USA", Type.VEGGIES),
-            new Ingredient("CAN", "Canada", Type.VEGGIES),
-            new Ingredient("CHN", "China", Type.WRAP),
-            new Ingredient("IDN", "India", Type.WRAP)
-
+            new Ingredient("USA", "USA", Type.SAUCE),
+            new Ingredient("JMA", "Jamaica", Type.SAUCE),
+            new Ingredient("AUS", "Australia", Type.VEGGIES),
+            new Ingredient("CHN", "China", Type.VEGGIES),
+            new Ingredient("BRA", "Brazil", Type.WRAP),
+            new Ingredient("URU", "Uruguay", Type.WRAP)
         );
 
         Type[] types = Ingredient.Type.values();
-        
-        for(Type type : types) {
+
+        for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
     }
@@ -56,9 +54,8 @@ public class DesignTacoController {
         return new Taco();
     }
 
-
-    @GetMapping
-    public String showDesignForm() {
+    @GetMapping("/design")
+    public String design() {
         return "design";
     }
 
@@ -72,10 +69,10 @@ public class DesignTacoController {
             .collect(Collectors.toList());
     }
 
-    @PostMapping
+    @PostMapping("/design")
     public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
         tacoOrder.addTacos(taco);
-        log.info("Processing taco {}", taco);
+        log.info("Processing your taco: {}", taco);
 
         return "redirect:/orders/current";
     }
