@@ -1,4 +1,4 @@
-package com.example.taco_cloud;
+package com.example.taco_cloud.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+
+import com.example.taco_cloud.TacoOrder;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
