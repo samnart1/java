@@ -14,11 +14,12 @@ import lombok.NoArgsConstructor;
 public class Ingredient {
     
     @Id
-    private final String Id;
-    private final String name;
-    private final Type type;
+    private String id;
+    private String name;
+    private Type type;
 
     public enum Type {
         VEGGIES, WRAP, PROTEIN, CHEESE, SAUCE 
     }
+
 }
