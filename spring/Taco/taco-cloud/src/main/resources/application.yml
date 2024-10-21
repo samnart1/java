@@ -15,5 +15,15 @@ spring:
                         clientId: <facebook client id>
                         clientSecret: <facebook client secret>
                         scope: email, public_profile
+                    
+    jpa:
+        open-in-view: false
+
+logging:
+    level:
+        org:
+            springframework:
+                security: DEBUG
+    
           
 
