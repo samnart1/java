@@ -12,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
@@ -24,6 +25,8 @@ public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @ManyToOne
+    private User user;
     
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id

@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 import com.example.taco_cloud.Ingredient.Type;
 import com.example.taco_cloud.data.IngredientRepository;
@@ -29,6 +30,12 @@ public class TacoCloudApplication {
 	    repo.save(new Ingredient("SLSA", "Salsa", Type.SAUCE));
 	    repo.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
 	  };
+	}
+
+	// @Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/").setViewName("home");
+		registry.addViewController("/login");
 	}
 
 	// @Bean
